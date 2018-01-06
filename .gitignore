@@ -1,0 +1,5 @@
+*.py[cod]
+tmp.py
+.idea
+*.db
+tmp
