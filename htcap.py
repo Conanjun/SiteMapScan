@@ -28,31 +28,44 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
-def usage():
-	infos = get_program_infos()
-	print ("htcap ver " + infos['version'] + "\n"
-		   "usage: htcap <command>\n" 
-		   "Commands: \n"
-		   "  crawl                  run crawler\n"
-		   "  scan                   run scanner\n"
-		   "  util                   run utility\n"
-		   )
+def logo():
+    print(
+        '''
+  mmmm    "      m                                 mmmm                      
+ #"   " mmm    mm#mm   mmm   mmmmm   mmm   mmmm   #"   "  mmm    mmm   m mm  
+ "#mmm    #      #    #"  #  # # #  "   #  #" "#  "#mmm  #"  "  "   #  #"  # 
+     "#   #      #    #""""  # # #  m"""#  #   #      "# #      m"""#  #   # 
+ "mmm#" mm#mm    "mm  "#mm"  # # #  "mm"#  ##m#"  "mmm#" "#mm"  "mm"#  #   # 
+                                           #                                 
+                                           "                                 
+                                           
+ Authors: Conan0xff Wha000tif Konakona
+ Version: 1.0
+ 
+ 
+ usage: htcap <command>
+ commands: 
+    crawl                  run crawler
+    scan                   run scanner
+    util                   run utility
+        '''
+    )
 
 
 if __name__ == '__main__':
+    logo()
+    if len(sys.argv) < 2:
+        logo()
+        sys.exit(1)
 
-	if len(sys.argv) < 2:
-		usage()
-		sys.exit(1)
+    elif sys.argv[1] == "crawl":
+        Crawler(sys.argv[2:])
+    elif sys.argv[1] == "scan":
+        Scanner(sys.argv[2:])
+    elif sys.argv[1] == "util":
+        Util(sys.argv[2:])
+    else:
+        logo()
+        sys.exit()
 
-	elif sys.argv[1] == "crawl":
-		Crawler(sys.argv[2:])
-	elif sys.argv[1] == "scan":
-		Scanner(sys.argv[2:])
-	elif sys.argv[1] == "util":
-		Util(sys.argv[2:])
-	else:
-		usage();
-		sys.exit(1)
-
-	sys.exit(0)
+    sys.exit(0)

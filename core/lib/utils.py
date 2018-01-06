@@ -24,8 +24,8 @@ from core.constants import *
 def get_program_infos():
 	infos = {
 		"version": "1.0.1 - dev",
-		"author_name": "Filippo Cavallarin",
-		"author_email": "filippo.cavallarin@wearesegment.com"
+		"author_name": "Conan0xff",
+		"author_email": "1526840124@qq.com"
 	}
 
 	return infos
