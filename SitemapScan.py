@@ -43,7 +43,7 @@ def logo():
  Version: 1.0
  
  
- usage: htcap <command>
+ usage: SitemapScan <command>
  commands: 
     crawl                  run crawler
     scan                   run scanner
